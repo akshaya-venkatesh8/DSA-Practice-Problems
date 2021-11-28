@@ -1,0 +1,22 @@
+# from collections import Counter
+
+
+def isPermutationPalindrome(string1):
+    dict_word = {}
+    # avoid the loop below with :
+    # dict_word = Counter(string1)
+    for letter in string1:
+        if letter in dict_word:
+            dict_word[letter] += 1
+        else:
+            dict_word[letter] = 1
+    count = 0
+    for key in dict_word:
+        if dict_word[key] % 2 != 0:
+            count += 1
+            if count > 1:
+                return False
+    return True
+print(isPermutationPalindrome("sasab"))
+
+# print(Counter("sasad"))

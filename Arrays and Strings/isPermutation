@@ -1,0 +1,20 @@
+def isPermutation(string1, string2):
+    dict_word = {}
+    if len(string1) != len(string2): return False
+    for letter in string1:
+        if letter in dict_word:
+            dict_word[letter] += 1
+        else:
+            dict_word[letter] = 1
+    
+    for letter in string2:
+        if letter in dict_word:
+            if dict_word[letter] > 0:
+                dict_word[letter] -= 1
+            else:
+                return False
+        else:
+            return False
+    return True
+
+print(isPermutation("assd","sad"))
