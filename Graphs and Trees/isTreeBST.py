@@ -3,8 +3,6 @@ class Node:
         self.right = None
         self.left = None
         self.data = data
-        self.min = 99
-        self.max = -99
 
     def isBSTUtil(self, root, min, max):
         print(root.data if root != None else None)
